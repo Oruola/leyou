@@ -23,3 +23,5 @@ ribbon:
   OkToRetryOnAllOperations: false # 是否对所有的请求方式都重试，只对get请求重试
 zuul:
   prefix: /api
+  routes:
+    item-service: /item/**    #前端页面访问路径是http://manage.leyou.com/api/item/**

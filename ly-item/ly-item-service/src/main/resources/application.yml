@@ -15,7 +15,7 @@ eureka:
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
-zuul:
-  prefix: /api # 添加路由前缀
-  routes:
-    item-service: /item/** # 将商品微服务映射到/item/**
+#zuul:
+#  prefix: /api # 添加路由前缀
+#  routes:
+#    item-service: /item/** # 将商品微服务映射到/item/**
