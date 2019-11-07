@@ -25,3 +25,20 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/**    #前端页面访问路径是http://manage.leyou.com/api/item/**
+ly:
+  cors:
+    allowedOrigins:
+      - http://www.leyou.com
+      - http://manage.leyou.com
+    allowedCredentials: true
+    allowedHeaders:
+      - "*"
+    allowedMethods:
+      - GET
+      - POST
+      - DELETE
+      - PUT
+      - OPTIONS
+      - HEAD
+    maxAge: 360000
+    filterPath: "/**"

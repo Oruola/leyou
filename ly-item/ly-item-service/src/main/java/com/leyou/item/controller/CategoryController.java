@@ -21,6 +21,7 @@ public class CategoryController {
     private CategoryService categoryService;
     @GetMapping("of/parent")
     public ResponseEntity<List<CategoryDTO>> queryByParentId(@RequestParam("pid") Long pid){
+
         return ResponseEntity.ok(categoryService.queryListByParent(pid));
     }
 }
