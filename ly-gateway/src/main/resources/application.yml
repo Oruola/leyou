@@ -25,6 +25,7 @@ zuul:
   prefix: /api
   routes:
     item-service: /item/**    #前端页面访问路径是http://manage.leyou.com/api/item/**
+    upload-service: /**
 ly:
   cors:
     allowedOrigins:

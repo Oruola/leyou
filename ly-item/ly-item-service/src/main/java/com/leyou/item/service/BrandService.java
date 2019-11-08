@@ -13,6 +13,7 @@ import com.leyou.item.mapper.BrandMapper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -41,5 +42,18 @@ public class BrandService {
         }
         List<BrandDTO> brandDTOS = BeanHelper.copyWithCollection(brandPage.getRecords(), BrandDTO.class);
         return new PageResult<BrandDTO>(brandPage.getTotal(),brandDTOS);
+    }
+    @Transactional
+    public void saveBrand(BrandDTO brandDTO, List<Long> ids) {
+        Brand brand = BeanHelper.copyProperties(brandDTO, Brand.class);
+        int count = brandMapper.insert(brand);
+        if(count!=1){
+            throw new LyException(ExceptionEnum.INSERT_OPERATION_FAIL);
+        }
+        count = brandMapper.insertCategoryBrand(brand.getId(), ids);
+        if(count!=ids.size()){
+            throw new LyException(ExceptionEnum.INSERT_OPERATION_FAIL);
+        }
+
     }
 }
