@@ -16,8 +16,8 @@ eureka:
     prefer-ip-address: true
 ly:
   oss:
-    accessKeyId: LTAI4FpcwJmaUhv73MCGwsnW
-    accessKeySecret: DXXvIIx49yADcjkREgSb2yYKo1NQwk
+    accessKeyId:  #自己注册的id
+    accessKeySecret: #自己申请的密码
     host: https://ly-images-ssss.oss-cn-beijing.aliyuncs.com     # Bucket域名注意带上https://
     endpoint: oss-cn-beijing.aliyuncs.com # 地域节点注意没有https
     dir: "" # 保存到bucket的某个子目录
